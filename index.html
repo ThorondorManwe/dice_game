@@ -1,27 +1,113 @@
 <html>
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <!--Fontawesome-->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="dice.css">
         <link rel="stylesheet" href="index.css">
     </head>
     <body>
-        <div class="container">
+        <div class="mainCcontainer">
             <h1 id="message">Player 1 Turn</h1>
             <div class="players">
                 <div id="player1">
                     <h1>Score: 
                         <span id="player1Scoreboard">0</span>
                     </h1>
-                    <div id="player1Dice" class="dice active">-</div>
+                    <!-- <div id="player1Dice" class="dice active">-</div> sustituye dados-->
+                    <!-- FIRST WE MAKE SIMPLE CUBE -->
+                    <div class="container">
+                        <div class="cube" id="cube">
+                            <div class="front">
+                                <span class="fas fa-circle"></span>
+                            </div>
+                            <div class="back">
+                                    <!-- i use pre tag to align dots -->
+                                    <pre class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre><br>
+                                    <pre class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
+                            </div>
+                            <div class="top">
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                            </div>
+                            <div class="left">
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                
+                            </div>
+                            <div class="right">
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                
+                            </div>
+                            <div class="bottom">
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
                 <div id="player2">
                     <h1>Score: 
                         <span id="player2Scoreboard">0</span>
                     </h1>
-                    <div id="player2Dice" class="dice">-</div>
+                    <!-- <div id="player2Dice" class="dice">-</div> -->
+                    <!-- ANOTHER CUBE -->
+                    <div class="container">
+                        <div class="cube" id="cube2">
+                            <div class="front">
+                                <span class="fas fa-circle"></span>
+                            </div>
+                            <div class="back">
+                                    <!-- i use pre tag to align dots -->
+                                    <pre class="firstPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre><br>
+                                    <pre class="secondPre"><span class="fas fa-circle"></span>    <span class="fas fa-circle"></span>    <span class="fas fa-circle"></span></pre>
+                            </div>
+                            <div class="top">
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                            </div>
+                            <div class="left">
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                
+                            </div>
+                            <div class="right">
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                
+                            </div>
+                            <div class="bottom">
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                                <span class="fas fa-circle"></span>
+                
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-
-            <button id="rollBtn">Roll Dice 🎲</button>
-            <button id="resetBtn">Reset Game 🔁</button>
+            
+            <div id="buttons">
+                <button id="rollBtn">Roll Dice 🎲</button>
+                <button id="resetBtn">Reset Game 🔁</button>
+            </div>
         </div>
         <script src="index.js"></script>
     </body>

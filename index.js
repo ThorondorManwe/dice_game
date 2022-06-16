@@ -12,6 +12,12 @@ const message = document.getElementById("message");
 const rollBtn = document.getElementById("rollBtn");
 const resetBtn = document.getElementById("resetBtn");
 
+const cube = document.getElementById('cube');
+const cube2 = document.getElementById('cube2');
+
+angleArray = [[0,0,0],[-310,-362,-38],[-400,-320,-2],[135,-217,-88],[-224,-317,5],[-47,-219,-81],[-133,-360,-53]];
+
+
 function showDisplayButton() {
     rollBtn.style.display = "none"
     resetBtn.style.display = "block"
@@ -20,22 +26,32 @@ function showDisplayButton() {
 /* Hook up a click event listener to the Roll Dice Button. Log out a random
  number between 1 and 6. Hint: use Math.floor() and Math.random() */
  
- rollBtn.addEventListener("click", function() {
+rollBtn.addEventListener("click", function() {
+    
+
     const randomNumber = Math.floor(Math.random() * 6) + 1; // 0-5 -> 1-6
     // 1. Find out which players turn it is
     if (player1Turn) {
+        cube.style.animation = 'animate 1.4s linear';
+        cube.style.transform = 'rotateX('+angleArray[randomNumber][0]+'deg) rotateY('+angleArray[randomNumber][1]+'deg) rotateZ('+angleArray[randomNumber][2]+'deg)';
+	    cube.style.transition = '1s linear';
+
         player1Score += randomNumber;
         player1Scoreboard.textContent = player1Score;
-        player1Dice.textContent = randomNumber;
-        player1Dice.classList.remove("active");
-        player2Dice.classList.add("active");
+        /* player1Dice.textContent = randomNumber; */
+        /* player1Dice.classList.remove("active");
+        player2Dice.classList.add("active"); */
         message.textContent = "Player 2 Turn";
     } else {
+        cube2.style.animation = 'animate 1.4s linear';
+        cube2.style.transform = 'rotateX('+angleArray[randomNumber][0]+'deg) rotateY('+angleArray[randomNumber][1]+'deg) rotateZ('+angleArray[randomNumber][2]+'deg)';
+	    cube2.style.transition = '1s linear';
+
         player2Score += randomNumber;
         player2Scoreboard.textContent = player2Score;
-        player2Dice.textContent = randomNumber;
+        /* player2Dice.textContent = randomNumber;
         player2Dice.classList.remove("active");
-        player1Dice.classList.add("active");
+        player1Dice.classList.add("active"); */
         message.textContent = "Player 1 Turn";
     }
     // 2. log out the value e.g. "Player 1 rolled 5"
@@ -78,13 +94,16 @@ function reset() {
     message.textContent = "Player 1 Turn";
     player1Scoreboard.textContent = 0;
     player2Scoreboard.textContent = 0;
-    player1Dice.textContent = '-';
-    player2Dice.textContent = '-';
+    cube.style.transform = 'rotateX('+angleArray[3][0]+'deg) rotateY('+angleArray[3][1]+'deg) rotateZ('+angleArray[3][2]+'deg)';
+    cube2.style.transform = 'rotateX('+angleArray[3][0]+'deg) rotateY('+angleArray[3][1]+'deg) rotateZ('+angleArray[3][2]+'deg)';
+    
+    /* player1Dice.textContent = '-';
+    player2Dice.textContent = '-'; */
     player1Score = 0;
     player2Score = 0;
     player1Turn = true;
     resetBtn.style.display = "none";
     rollBtn.style.display = "block";
-    player2Dice.classList.remove("active");
-    player1Dice.classList.add("active");
+    /* player2Dice.classList.remove("active");
+    player1Dice.classList.add("active"); */
 }

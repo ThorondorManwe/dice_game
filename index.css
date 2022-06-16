@@ -16,13 +16,38 @@ body {
     color: black;
 }
 
-.container {
+
+/* body{
+    background: #f0f0f0;
+} */
+
+#main {
+    display: flex;
+    justify-content: space-around;
+    border: 1px solid green;
+}
+
+.container{
+    perspective: 1000px;
+    perspective-origin: 50% 50%;
+    font-family: 'fontawesome';
+    /* height: 100vh; */
+    height: 600px;
+    width: 500px;
+    /* border: 1px solid blue; */
+}
+
+.mainContainer {
     width: 400px;
     text-align: center;
     margin: 0 auto;
     background-color: white;
     box-shadow: -2px 6px 18px 3px rgba(0,0,0,0.75);
     padding: 50px;
+}
+
+#message {
+    text-align: center;
 }
 
 .players {
@@ -48,6 +73,7 @@ button {
     color: #fff;
     padding: 20px 30px;
     font-size: 20px;
+    margin: 0 auto;
     margin-top: 40px;
     border: none;
     border-radius: 5px;
@@ -55,11 +81,11 @@ button {
 }
 
 #rollBtn {
-    background-color: var(--color-5);
+    background-color: #0369A1;
 }
 
 #resetBtn {
-    background-color: var(--color-4);
+    background-color: #0C4A6E;
 }
 
 button:focus {
@@ -73,3 +99,270 @@ button:focus {
 .active {
     box-shadow: -2px 6px 18px 3px rgba(0,0,0,0.75);
 }
+
+
+
+
+/* Cube 1 */
+
+.container .cube{
+    position: relative;
+    left: 45%;
+    top: 40%; 
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
+}
+
+.container .cube div{
+    position: absolute;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    border:2px solid #eee;
+    color: #fff;
+}
+
+.container .cube div span{
+    font-size: 32px;
+    font-family: 'fontawesome';
+}
+
+.container .cube .front{
+    background: #000;
+    transform: translateZ(100px);
+}
+
+.container .cube .back{
+    background: #000;
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+.container .cube .right{
+    background: #000;
+    transform-origin: top right;
+    transform: rotateY(-270deg) translateX(100px);
+}
+
+.container .cube .left{
+    background: #000;
+    transform-origin: center left;
+    transform: rotateY(270deg) translateX(-100px);
+}
+
+.container .cube .top{
+    background: #000;
+    transform-origin: top center;
+    transform: rotateX(-270deg) translateY(-100px);
+}
+
+.container .cube .bottom{
+    background: #000;
+    transform-origin: bottom center;
+    transform: rotateX(270deg) translateY(100px);
+}
+  
+/*DOT ALIGNMENT */
+
+.container .cube .front span,.container .cube .left span:nth-child(1),
+.container .cube .right span:nth-child(1){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.container .cube .top span:nth-child(1),.container .cube .left span:nth-child(2),
+.container .cube .right span:nth-child(2),
+.container .cube .bottom span:nth-child(1){
+    position: absolute;
+    top: 35px;
+    left: 35px;
+}
+
+.container .cube .top span:nth-child(2),.container .cube .left span:nth-child(3),
+.container .cube .right span:nth-child(3),
+.container .cube .bottom span:nth-child(2){
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+}
+
+.container .cube .right span:nth-child(4),
+.container .cube .bottom span:nth-child(3){
+    position: absolute;
+    top: 35px;
+    right: 35px;
+}
+
+.container .cube .right span:nth-child(5),
+.container .cube .bottom span:nth-child(4){
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+}
+
+.container .cube .back pre{
+    font-size: 32px;
+    font-family: 'fontawesome';
+    margin: 0;
+}
+
+.container .cube .back .firstPre{
+    position: absolute;
+    top: 45px;
+    left: 26px;
+}
+
+.container .cube .back .secondPre{
+    position: absolute;
+    bottom: 45px;
+    right: 26px;
+}
+
+/* Cube 2 */
+.container .cube2{
+    position: relative;
+    left: 20%;
+    top: 40%;
+    height: 200px;
+    width: 200px;
+    transform-style: preserve-3d;
+    cursor: pointer;
+    transform: rotateX(135deg) rotateY(-217deg) rotateZ(-88deg);
+}
+
+.container .cube2 div{
+    position: absolute;
+    box-sizing: border-box;
+    padding: 10px;
+    height: 100%;
+    width: 100%;
+    border:2px solid #eee;
+    color: #fff;
+}
+
+.container .cube2 div span{
+    font-size: 32px;
+    font-family: 'fontawesome';
+}
+
+.container .cube2 .front{
+    background: #000;
+    transform: translateZ(100px);
+}
+
+.container .cube2 .back{
+    background: #000;
+    transform: translateZ(-100px) rotateY(180deg);
+}
+
+.container .cube2 .right{
+    background: #000;
+    transform-origin: top right;
+    transform: rotateY(-270deg) translateX(100px);
+}
+
+.container .cube2 .left{
+    background: #000;
+    transform-origin: center left;
+    transform: rotateY(270deg) translateX(-100px);
+}
+
+.container .cube2 .top{
+    background: #000;
+    transform-origin: top center;
+    transform: rotateX(-270deg) translateY(-100px);
+}
+
+.container .cube2 .bottom{
+    background: #000;
+    transform-origin: bottom center;
+    transform: rotateX(270deg) translateY(100px);
+}
+  
+/*DOT ALIGNMENT */
+
+.container .cube2 .front span,.container .cube2 .left span:nth-child(1),
+.container .cube2 .right span:nth-child(1){
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+}
+
+.container .cube2 .top span:nth-child(1),.container .cube2 .left span:nth-child(2),
+.container .cube2 .right span:nth-child(2),
+.container .cube2 .bottom span:nth-child(1){
+    position: absolute;
+    top: 35px;
+    left: 35px;
+}
+
+.container .cube2 .top span:nth-child(2),.container .cube2 .left span:nth-child(3),
+.container .cube2 .right span:nth-child(3),
+.container .cube2 .bottom span:nth-child(2){
+    position: absolute;
+    bottom: 35px;
+    right: 35px;
+}
+
+.container .cube2 .right span:nth-child(4),
+.container .cube2 .bottom span:nth-child(3){
+    position: absolute;
+    top: 35px;
+    right: 35px;
+}
+
+.container .cube2 .right span:nth-child(5),
+.container .cube2 .bottom span:nth-child(4){
+    position: absolute;
+    bottom: 35px;
+    left: 35px;
+}
+
+.container .cube2 .back pre{
+    font-size: 32px;
+    font-family: 'fontawesome';
+    margin: 0;
+}
+
+.container .cube2 .back .firstPre{
+    position: absolute;
+    top: 45px;
+    left: 26px;
+}
+
+.container .cube2 .back .secondPre{
+    position: absolute;
+    bottom: 45px;
+    right: 26px;
+}
+
+/*buttons */
+#buttons {
+    display: flex;
+    justify-content: center;
+}
+
+@keyframes animate {
+    25%{
+      transform: rotateX(45deg) rotateY(65deg) rotateZ(35deg);
+      top: 0%;
+    }
+    50%{
+      transform: rotateX(145deg) rotateY(165deg) rotateZ(135deg);
+      top: 30%;
+    }
+    75%{
+      transform: rotateX(276deg) rotateY(256deg) rotateZ(246deg);
+      top: 45%;
+    }
+    100%{
+      transform: rotateX(376deg) rotateY(356deg) rotateZ(346deg);
+      top: 60%;
+    }
+}  
